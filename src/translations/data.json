@@ -1,0 +1,510 @@
+{
+  "sunday": {
+    "en": "Sunday",
+    "es": "Domingo"
+  },
+  "monday": {
+    "en": "Monday",
+    "es": "Lunes"
+  },
+  "tuesday": {
+    "en": "Tuesday",
+    "es": "Martes"
+  },
+  "wednesday": {
+    "en": "Wednesday",
+    "es": "Miercoles"
+  },
+  "thursday": {
+    "en": "Thursday",
+    "es": "Jueves"
+  },
+  "friday": {
+    "en": "Friday",
+    "es": "Viernes"
+  },
+  "saturday": {
+    "en": "Saturday",
+    "es": "Sabado"
+  },
+  "appointment_schedule": {
+    "en": "Appointment Schedule",
+    "es": "Agenda de citas"
+  },
+  "ECONNABORTED": {
+    "en": "Cannot connect...",
+    "es": "No se puede conectar..."
+  },
+  "data_not_found": {
+    "en": "Data not found",
+    "es": "No se encuentran los datos, o no se encuentra servicio"
+  },
+  "no_data_found": {
+    "en": "Data not found",
+    "es": "Dato no encontrado"
+  },
+  "new_appointment": {
+    "en": "New Appointment",
+    "es": "Nueva Cita"
+  },
+  "edit_appointment": {
+    "en": "Edit Appointment",
+    "es": "Editar Cita"
+  },
+  "invalid_appointment": {
+    "en": "Invalid Appointment",
+    "es": "Cita Invalida"
+  },
+  "show_map": {
+    "en": "Show map",
+    "es": "Mostrar Mapa"
+  },
+  "map": {
+    "en": "Map",
+    "es": "Mapa"
+  },
+  "appointment": {
+    "en": "Appointment",
+    "es": "Cita"
+  },
+  "appointment_notification": {
+    "en": "Appointment notification",
+    "es": "Notificacion de cita"
+  },
+  "appointment_notifications": {
+    "en": "Appointment notifications",
+    "es": "Notificaciones de citas"
+  },
+  "notice_of_appointment_at": {
+    "en": "Notice of Appointment at",
+    "es": "Aviso de cita a las"
+  },
+  "select": {
+    "en": "Select",
+    "es": "Seleccionar"
+  },
+  "select_hour": {
+    "en": "Select hour",
+    "es": "Seleccionar hora"
+  },
+  "count_of_hours_before": {
+    "en": "Count of hour(s) before",
+    "es": "Cantidad de hora(s) antes"
+  },
+  "hours_before": {
+    "en": "Hour(s) Before",
+    "es": "Hora(s) Antes"
+  },
+  "with": {
+    "en": "with",
+    "es": "con"
+  },
+  "appointment_place_was_assigned": {
+    "en": "Appointment place was assigned",
+    "es": "Se asigno el lugar de la cita"
+  },
+  "appointment_was_finished": {
+    "en": "Appointment was finished",
+    "es": "Se finalizo la cita"
+  },
+  "no_data": {
+    "en": "No Data...",
+    "es": "Sin Datos..."
+  },
+  "empty_data": {
+    "en": "Empty Data...",
+    "es": "Datos Vacios..."
+  },
+  "check_in": {
+    "en": "Check In",
+    "es": "Check In"
+  },
+  "check": {
+    "en": "Check",
+    "es": "Check"
+  },
+  "add_new_appointment": {
+    "en": "Add new appointment",
+    "es": "Agregar nueva cita"
+  },
+  "placeholder_note": {
+    "en": "Add note",
+    "es": "Agregar nota"
+  },
+  "note": {
+    "en": "Note",
+    "es": "Nota"
+  },
+  "next_step": {
+    "en": "Next step",
+    "es": "Siguiente paso"
+  },
+  "next": {
+    "en": "Next",
+    "es": "Siguiente"
+  },
+  "initial_note": {
+    "en": "Initial note",
+    "es": "Nota Inicial"
+  },
+  "add_note": {
+    "en": "Add note",
+    "es": "Agregar nota"
+  },
+  "add_final_note": {
+    "en": "Add final note",
+    "es": "Agregar nota final"
+  },
+  "final_note": {
+    "en": "Final note",
+    "es": "Nota final"
+  },
+  "finish_appointment": {
+    "en": "Finish appointment",
+    "es": "Finalizar cita"
+  },
+  "interesed": {
+    "en": "Interesed",
+    "es": "Interesado"
+  },
+  "not_interesed": {
+    "en": "Not interesed",
+    "es": "Sin interesado"
+  },
+  "appointment_checked": {
+    "en": "Appointment was checked",
+    "es": "Se asigno el lugar de la cita"
+  },
+  "update": {
+    "en": "Update",
+    "es": "Actualizar"
+  },
+  "sure_want_delete_record": {
+    "en": "¿Are you sure that you want to delete the record?",
+    "es": "¿Está seguro de que desea eliminar el registro?"
+  },
+  "accept": {
+    "en": "Accept",
+    "es": "Aceptar"
+  },
+  "date": {
+    "en": "Date",
+    "es": "Fecha"
+  },
+  "location": {
+    "en": "Location",
+    "es": "Ubicacion"
+  },
+  "cancel": {
+    "en": "Cancel",
+    "es": "Cancelar"
+  },
+  "confirm": {
+    "en": "Confirm",
+    "es": "Confirmar"
+  },
+  "pick_a_date": {
+    "en": "Pick a date",
+    "es": "Selecciona una fecha"
+  },
+  "settings": {
+    "en": "Settings",
+    "es": "Configuraciónes"
+  },
+  "select_lang": {
+    "en": "Select Language",
+    "es": "Seleccionar Lenguaje"
+  },
+  "select_client": {
+    "en": "Select Client",
+    "es": "Seleccionar Cliente"
+  },
+  "select_date": {
+    "en": "Select Date",
+    "es": "Seleccionar Fecha"
+  },
+  "language": {
+    "en": "Language",
+    "es": "Idioma"
+  },
+  "change_language": {
+    "en": "Change Language",
+    "es": "Cambiar Idioma"
+  },
+  "language_changed": {
+    "en": "Language Changed",
+    "es": "Idioma Cambiado"
+  },
+  "english": {
+    "en": "English",
+    "es": "Inglés"
+  },
+  "spanish": {
+    "en": "Spanish",
+    "es": "Español"
+  },
+  "crm_system": {
+    "en": "CRM System",
+    "es": "Sistema CRM"
+  },
+  "welcome": {
+    "en": "Welcome",
+    "es": "Bienvenido"
+  },
+  "form": {
+    "en": "Form",
+    "es": "Formulario"
+  },
+  "back": {
+    "en": "Back",
+    "es": "Atrás"
+  },
+  "client": {
+    "en": "Client",
+    "es": "Cliente"
+  },
+  "schedule": {
+    "en": "Schedule",
+    "es": "Agendar"
+  },
+  "reason": {
+    "en": "Reason",
+    "es": "Motivo"
+  },
+  "reasons": {
+    "en": "Reasons",
+    "es": "Motivos"
+  },
+  "none": {
+    "en": "None",
+    "es": "Ninguno"
+  },
+  "select_reason": {
+    "en": "Select reason",
+    "es": "Seleccionar motivo"
+  },
+  "select_other_reason": {
+    "en": "Select other reason",
+    "es": "Seleccionar otro motivo"
+  },
+  "available_cuts": {
+    "en": "available cuts",
+    "es": "cortes disponibles"
+  },
+  "warning": {
+    "en": "Notice",
+    "es": "Aviso"
+  },
+  "username": {
+    "en": "Username",
+    "es": "Nombre de Usuario"
+  },
+  "email_or_phone": {
+    "en": "Email or phone",
+    "es": "Email o telefono"
+  },
+  "password": {
+    "en": "Password",
+    "es": "Contraseña"
+  },
+  "for_the_ideal_barbecue": {
+    "en": "for the ideal barbecue",
+    "es": "para el asado ideal"
+  },
+  "so_that_nothing_is_missing": {
+    "en": "so that nothing is missing",
+    "es": "para que no falte nada"
+  },
+  "login": {
+    "en": "Login",
+    "es": "Ingresar"
+  },
+  "register": {
+    "en": "Register",
+    "es": "Registrarme"
+  },
+  "im_new": {
+    "en": "I'm new",
+    "es": "Soy usuario nuevo"
+  },
+  "sure_want_leave": {
+    "en": "Are you sure you want to leave?",
+    "es": "Esta seguro de que desea salir?"
+  },
+  "home": {
+    "en": "home",
+    "es": "inicio"
+  },
+  "products": {
+    "en": "products",
+    "es": "productos"
+  },
+  "config": {
+    "en": "config",
+    "es": "config"
+  },
+  "logout": {
+    "en": "Logout",
+    "es": "Salir"
+  },
+  "yes": {
+    "en": "Yes",
+    "es": "Si"
+  },
+  "no": {
+    "en": "No",
+    "es": "No"
+  },
+  "app.helloWorld": {
+    "en": "Hello World",
+    "es": "Hola mundo"
+  },
+  "app.learnReact": {
+    "en": "Learn React.",
+    "es": "Aprende React."
+  },
+  "closing_reason": {
+    "en": "Closing Reason",
+    "es": "Razón de cierre"
+  },
+  "closing_note": {
+    "en": "Closing Note",
+    "es": "Nota de cierre"
+  },
+  "output_location": {
+    "en": "Output Location",
+    "es": "Ubicación de salida"
+  },
+  "entry_location": {
+    "en": "Entry Location",
+    "es": "Ubicación de entrada"
+  },
+  "opening_note": {
+    "en": "Opening Note",
+    "es": "Nota de apertura"
+  },
+  "client_ubication": {
+    "en": "Client ubication",
+    "es": "Ubicación de cliente"
+  },
+  "initial_ubication": {
+    "en": "Initial ubication",
+    "es": "Ubicación inicial"
+  },
+  "final_ubication": {
+    "en": "Final ubication",
+    "es": "Ubicación final"
+  },
+  "downloading_appointments": {
+    "en": "Downloading appointmnets",
+    "es": "Descargando citas"
+  },
+  "please_wait": {
+    "en": "Please wait",
+    "es": "Por favor, esperar"
+  },
+  "first_name": {
+    "en": "First Name",
+    "es": "Nombres"
+  },
+  "last_name": {
+    "en": "Last Name",
+    "es": "Apellidos"
+  },
+  "email": {
+    "en": "Email",
+    "es": "Email"
+  },
+  "phone": {
+    "en": "Phone",
+    "es": "Número de Teléfono"
+  },
+  "birthdate": {
+    "en": "Birthdate",
+    "es": "Fecha de Nacimiento"
+  },
+  "principal_address": {
+    "en": "Principal address",
+    "es": "Calle principal"
+  },
+  "secondary_address": {
+    "en": "Secondary address",
+    "es": "Calle secundaria"
+  },
+  "house_number": {
+    "en": "House number",
+    "es": "Numero de casa"
+  },
+  "other_references": {
+    "en": "Other references",
+    "es": "Otras referencias"
+  },
+  "locate_in_map": {
+    "en": "Locate in map",
+    "es": "Ubicar en el mapa"
+  },
+  "locate_your_address_in_the_map": {
+    "en": "Locate your address in the map",
+    "es": "Ubica tu dirección en el mapa"
+  },
+  "move_the_map_to_locate_your_shipping_place": {
+    "en": "Locate your address in the map",
+    "es": "Move el mapa para ubicar tu lugar de envio"
+  },
+  "save": {
+    "en": "Save",
+    "es": "Guardar"
+  },
+  "add_your_address": {
+    "en": "Add your address",
+    "es": "Agrega tu direccion"
+  },
+  "your_profile": {
+    "en": "Your profile",
+    "es": "Tu perfil"
+  },
+  "account": {
+    "en": "Account",
+    "es": "Cuenta"
+  },
+  "edit_data": {
+    "en": "Edit Data",
+    "es": "Editar Datos"
+  },
+  "edit_your_profile": {
+    "en": "Edit your profile",
+    "es": "Edita tu perfil"
+  },
+  "search_products": {
+    "en": "Search products",
+    "es": "Buscar productos"
+  },
+  "show_category_list": {
+    "en": "Show category list",
+    "es": "Ver lista de categorías"
+  },
+  "show_brands_list": {
+    "en": "Show brands list",
+    "es": "Ver lista de marcas"
+  },
+  "brands": {
+    "en": "Brands",
+    "es": "Marcas"
+  },
+  "categories": {
+    "en": "Categories",
+    "es": "Categorias"
+  },
+  "show_products": {
+    "en": "show products",
+    "es": "ver productos"
+  },
+  "your_cart": {
+    "en": "your cart",
+    "es": "tu carrito"
+  },
+  "promotions": {
+    "en": "Promotions",
+    "es": "Promociones"
+  }
+}
