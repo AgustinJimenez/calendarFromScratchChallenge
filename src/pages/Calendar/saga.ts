@@ -1,3 +1,9 @@
+import {
+  AppCalendarType,
+  AppDatesObjectListType,
+  AppReminderType,
+  AppTodayDateType,
+} from './../../types/index';
 import {put, takeLatest, select} from 'redux-saga/effects';
 import {
   CLEAR_CITY_OPTION_SAGA,
@@ -22,9 +28,11 @@ import ListToObjectList from '../../helpers/ListToObjectList';
 // import {apiSearchWeatherByQueryUri} from '../../api';
 dayjs.extend(weekOfYear);
 
-function* loadCalendarPage({date}: any) {
+function* loadCalendarPage({date}: {date: string; type: string}) {
   //@ts-ignore
-  let calendar: any = yield select(state => datasetSelector(state, 'calendar'));
+  let calendar: AppCalendarType = yield select(state =>
+    datasetSelector(state, 'calendar'),
+  );
 
   const todayNow = dayjs();
 
@@ -35,11 +43,12 @@ function* loadCalendarPage({date}: any) {
     value: todayNow.format(YMD_FORMAT),
     day: todayNow.format('dddd').toLowerCase(),
     week: todayNow.week(),
+    day_number: todayNow.format('DD'),
   };
   const dateMonth = dayjs(calendar['base_date']);
   const startOfMonth = dateMonth.startOf('month');
   const monthFirstWeekNumber = startOfMonth.week();
-  const dates: any = {};
+  const dates: AppDatesObjectListType = {};
   const startOfFirstMonth = startOfMonth.subtract(1, 'month').startOf('month');
   const endOfThirdMonth = startOfMonth.add(1, 'month').endOf('month');
   let d = startOfFirstMonth.clone();
@@ -60,9 +69,7 @@ function* loadCalendarPage({date}: any) {
   );
   let w = monthFirstWeekNumber;
   while (!Boolean(calendar['weeks_rows'][5])) {
-    const weekDates = datesArray
-      .filter((d: any) => d['week'] === w)
-      .map((d: any) => d.value);
+    const weekDates = datesArray.filter(d => d['week'] === w).map(d => d.value);
     calendar['weeks_rows'].push(weekDates);
     w++;
     if (w > 52) w = 1;
@@ -78,9 +85,18 @@ export function* loadCalendarPageSaga() {
   yield takeLatest(LOAD_CALENDAR_PAGE_SAGA, loadCalendarPage);
 }
 
-function* onAcceptCalendarPageDialog({data, close_dialog}: any) {
+function* onAcceptCalendarPageDialog({
+  data,
+  close_dialog,
+}: {
+  data: AppReminderType;
+  close_dialog: boolean;
+  type: string;
+}) {
   //@ts-ignore
-  let calendar: any = yield select(state => datasetSelector(state, 'calendar'));
+  let calendar: AppCalendarType = yield select(state =>
+    datasetSelector(state, 'calendar'),
+  );
   const {text, date, time, city_id} = data;
   const id = data.id ? data.id : uuidv4();
   if (Boolean(close_dialog)) calendar['dialog']['is_open'] = false;
@@ -120,7 +136,9 @@ export function* onAcceptCalendarPageDialogSaga() {
 
 function* onCloseCalendarPageDialog() {
   //@ts-ignore
-  let calendar: any = yield select(state => datasetSelector(state, 'calendar'));
+  let calendar: AppCalendarType = yield select(state =>
+    datasetSelector(state, 'calendar'),
+  );
   calendar.dialog = {
     ...calendar.dialog,
     is_open: false,
@@ -134,18 +152,20 @@ export function* onCloseCalendarPageDialogSaga() {
   );
 }
 
-function* onOpenCalendarPageDialog({date}: any) {
+function* onOpenCalendarPageDialog({date}: {type: string; date: string}) {
   //@ts-ignore
-  let calendar: any = yield select(state => datasetSelector(state, 'calendar'));
+  let calendar: AppCalendarType = yield select(state =>
+    datasetSelector(state, 'calendar'),
+  );
   calendar.dialog = {
     ...calendar.dialog,
     selected_date: date,
     is_open: true,
   };
   yield put(setDatasetToReducerAction({...calendar}, 'calendar'));
-  const date_reminders: any[] = Object.keys(calendar.reminders || {})
-    .filter((id: any) => calendar?.reminders?.[id]?.date === date)
-    .map((id: any) => ({...calendar?.reminders?.[id], id}));
+  const date_reminders = Object.keys(calendar.reminders || {})
+    .filter(id => calendar?.reminders?.[id]?.date === date)
+    .map(id => ({...calendar?.reminders?.[id], id}));
 
   // const today = dayjs();
   for (let reminder of date_reminders) {
@@ -170,22 +190,25 @@ export function* onOpenCalendarPageDialogSaga() {
   yield takeLatest(ON_OPEN_CALENDAR_PAGE_DIALOG_SAGA, onOpenCalendarPageDialog);
 }
 
-function* onSearchCity({text}: any) {
+function* onSearchCity({text}: {text: string; type: string}) {
   //@ts-ignore
-  let calendar: any = yield select(state => datasetSelector(state, 'calendar'));
+  let calendar: AppCalendarType = yield select(state =>
+    datasetSelector(state, 'calendar'),
+  );
   calendar.search_city.is_loading = true;
   yield put(setDatasetToReducerAction({...calendar}, 'calendar'));
   //@ts-ignore
-  const {data} = yield request(
+  const {data}: {data: AppCityType[]} = yield request(
     apiSearchCityByQueryUri({
       text,
     }),
   );
+
   calendar.cities = {
     ...calendar.cities,
     ...ListToObjectList(data),
   };
-  calendar.search_city.options = data?.map?.(({id, name}: any) => ({
+  calendar.search_city.options = data?.map?.(({id, name}) => ({
     id,
     label: name,
   }));
@@ -196,9 +219,11 @@ export function* onSearchCitySaga() {
   yield takeLatest(ON_SEARCH_CITY_SAGA, onSearchCity);
 }
 
-function* clearCityOptions({text}: any) {
+function* clearCityOptions() {
   //@ts-ignore
-  let calendar: any = yield select(state => datasetSelector(state, 'calendar'));
+  let calendar: AppCalendarType = yield select(state =>
+    datasetSelector(state, 'calendar'),
+  );
   calendar.search_city.options = [];
   yield put(setDatasetToReducerAction({...calendar}, 'calendar'));
 }

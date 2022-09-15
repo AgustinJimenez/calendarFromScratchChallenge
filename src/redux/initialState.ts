@@ -1,7 +1,14 @@
-const initialState = {
+import {AppInitialStateType} from '../types';
+
+const initialState: AppInitialStateType = {
   calendar: {
     base_date: '',
-    today_date: '',
+    today_date: {
+      day: '',
+      value: '',
+      week: 0,
+      day_number: '00',
+    },
     dates: {},
     weeks_rows: [],
     reminders: {},

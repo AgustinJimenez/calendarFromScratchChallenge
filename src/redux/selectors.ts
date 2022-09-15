@@ -5,15 +5,6 @@ const getDataset = (state: any, datasetName: string) => {
   let dataset = state[datasetName];
   return dataset;
 };
-export const persistSelector = ({_persist: any = null}) => {
-  return (
-    //@ts-ignore
-    _persist || {
-      version: null,
-      rehydrated: false,
-    }
-  );
-};
 export const datasetSelector: any = (
   state: any,
   datasetName: string,

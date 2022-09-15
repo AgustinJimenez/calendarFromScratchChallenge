@@ -16,7 +16,7 @@ export const onCloseCalendarPageDialogAction = () => ({
   type: ON_CLOSE_CALENDAR_PAGE_DIALOG_SAGA,
 });
 
-export const onOpenCalendarPageDialogAction = ({date}: any) => ({
+export const onOpenCalendarPageDialogAction = ({date}: {date: string}) => ({
   type: ON_OPEN_CALENDAR_PAGE_DIALOG_SAGA,
   date,
 });
@@ -24,13 +24,16 @@ export const onOpenCalendarPageDialogAction = ({date}: any) => ({
 export const onAcceptCalendarPageDialogAction = ({
   data,
   close_dialog,
-}: any) => ({
+}: {
+  data: any;
+  close_dialog: boolean;
+}) => ({
   type: ON_ACCEPT_CALENDAR_PAGE_DIALOG_SAGA,
   data,
   close_dialog,
 });
 
-export const onSearchCityAction = ({text}: any) => ({
+export const onSearchCityAction = ({text}: {text: string}) => ({
   type: ON_SEARCH_CITY_SAGA,
   text,
 });

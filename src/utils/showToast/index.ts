@@ -1,7 +1,10 @@
 import {toast, ToastContent, ToastOptions} from 'react-toastify';
 import i18n from '../../app/i18n';
 
-const showToast = (text: string = 'No message to Show', options: any = {}) => {
+const showToast = (
+  text: string = 'No message to Show',
+  options: ToastOptions = {},
+) => {
   let defaultOptions: ToastOptions = {
     type: 'warning',
     position: 'bottom-right',

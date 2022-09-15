@@ -2,7 +2,7 @@ const meta_weather_api_url: string = 'http://api.weatherapi.com/v1';
 const meta_weather_api_current_city_weather_url: string = 'current.json';
 const meta_weather_api_city_url: string = 'search.json';
 
-export const apiSearchCityByQueryUri = ({text}: any) => ({
+export const apiSearchCityByQueryUri = ({text}: {text: string}) => ({
   url: `${meta_weather_api_url}/${meta_weather_api_city_url}`,
   method: 'GET',
   params: {
@@ -12,7 +12,13 @@ export const apiSearchCityByQueryUri = ({text}: any) => ({
   },
 });
 
-export const apiSearchPastWeatherByCityUri = ({text, date}: any) => ({
+export const apiSearchPastWeatherByCityUri = ({
+  text,
+  date,
+}: {
+  text: string;
+  date: string;
+}) => ({
   url: `${meta_weather_api_url}/${meta_weather_api_current_city_weather_url}`,
   method: 'GET',
   params: {

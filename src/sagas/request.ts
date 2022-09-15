@@ -12,7 +12,6 @@ const debug_requests = false;
 export default function* request(options: any) {
   var startTime: any = {},
     endTime: any = {},
-    network: any = {},
     auth_token: string = '',
     response: any = {},
     data = {},
@@ -119,14 +118,12 @@ export default function* request(options: any) {
 
     switch (response.status) {
       case HttpStatus.NOT_FOUND:
-        yield showToast(i18n.t('data_not_found'), {type: 'danger'});
+        yield showToast(i18n.t('data_not_found'), {type: 'error'});
         break;
       case HttpStatus.UNAUTHORIZED:
-        yield showToast(message, {type: 'danger'});
-        // yield put(logoutAction());
+        yield showToast(message, {type: 'error'});
         break;
     }
-    //console.log('FINALLY =====> ', { response, data, error, message })
     return {response, data, error, message};
   }
 }
