@@ -86,3 +86,13 @@ export type AppCalendarType = {
 export type AppInitialStateType = {
   calendar: AppCalendarType;
 };
+
+export type LanguagesTypes = 'en' | 'es';
+
+export type LanguagesObjType = {
+  [id in LanguagesTypes]: string;
+};
+
+export type LanguagesDataType = {
+  [key: string]: LanguagesObjType;
+};

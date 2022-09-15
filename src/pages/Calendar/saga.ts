@@ -1,5 +1,6 @@
 import {
   AppCalendarType,
+  AppCityType,
   AppDatesObjectListType,
   AppReminderType,
   AppTodayDateType,
@@ -29,7 +30,6 @@ import ListToObjectList from '../../helpers/ListToObjectList';
 dayjs.extend(weekOfYear);
 
 function* loadCalendarPage({date}: {date: string; type: string}) {
-  //@ts-ignore
   let calendar: AppCalendarType = yield select(state =>
     datasetSelector(state, 'calendar'),
   );
@@ -93,7 +93,6 @@ function* onAcceptCalendarPageDialog({
   close_dialog: boolean;
   type: string;
 }) {
-  //@ts-ignore
   let calendar: AppCalendarType = yield select(state =>
     datasetSelector(state, 'calendar'),
   );
@@ -116,13 +115,10 @@ function* onAcceptCalendarPageDialog({
   //@ts-ignore
   const response = yield request(
     apiSearchPastWeatherByCityUri({
-      //@ts-ignore
       text: `${reminder_city?.lat},${reminder_city?.lon}`,
-      //@ts-ignore
       date: reminder.date,
     }),
   );
-  //@ts-ignore
   calendar.reminders[id].weather = response.data.current;
 
   yield put(setDatasetToReducerAction({...calendar}, 'calendar'));
@@ -135,7 +131,6 @@ export function* onAcceptCalendarPageDialogSaga() {
 }
 
 function* onCloseCalendarPageDialog() {
-  //@ts-ignore
   let calendar: AppCalendarType = yield select(state =>
     datasetSelector(state, 'calendar'),
   );
@@ -153,7 +148,6 @@ export function* onCloseCalendarPageDialogSaga() {
 }
 
 function* onOpenCalendarPageDialog({date}: {type: string; date: string}) {
-  //@ts-ignore
   let calendar: AppCalendarType = yield select(state =>
     datasetSelector(state, 'calendar'),
   );
@@ -171,17 +165,13 @@ function* onOpenCalendarPageDialog({date}: {type: string; date: string}) {
   for (let reminder of date_reminders) {
     // const reminder_date = dayjs(reminder?.date)
     // if(toreminder_dateday.isafter(today))
-    //@ts-ignore
     const reminder_city = calendar.cities[reminder.city_id];
     let {data} = yield request(
       apiSearchPastWeatherByCityUri({
-        //@ts-ignore
         text: `${reminder_city?.lat},${reminder_city?.lon}`,
-        //@ts-ignore
         date: reminder.date,
       }),
     );
-    //@ts-ignore
     calendar.reminders[reminder.id].weather = data.current;
   }
   yield put(setDatasetToReducerAction({...calendar}, 'calendar'));
@@ -191,13 +181,11 @@ export function* onOpenCalendarPageDialogSaga() {
 }
 
 function* onSearchCity({text}: {text: string; type: string}) {
-  //@ts-ignore
   let calendar: AppCalendarType = yield select(state =>
     datasetSelector(state, 'calendar'),
   );
   calendar.search_city.is_loading = true;
   yield put(setDatasetToReducerAction({...calendar}, 'calendar'));
-  //@ts-ignore
   const {data}: {data: AppCityType[]} = yield request(
     apiSearchCityByQueryUri({
       text,
@@ -220,7 +208,6 @@ export function* onSearchCitySaga() {
 }
 
 function* clearCityOptions() {
-  //@ts-ignore
   let calendar: AppCalendarType = yield select(state =>
     datasetSelector(state, 'calendar'),
   );

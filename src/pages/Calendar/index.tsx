@@ -6,10 +6,13 @@ import {datasetSelector} from '../../redux/selectors';
 import dayjs from 'dayjs';
 import {Container, Typography} from '@mui/material';
 import CalendarInput from './components/CalendarInput';
+import {AppCalendarType} from '../../types';
 
 function Calendar() {
   const dispatch = useDispatch();
-  const calendar = useSelector(state => datasetSelector(state, 'calendar'));
+  const calendar: AppCalendarType = useSelector(state =>
+    datasetSelector(state, 'calendar'),
+  );
   const date_in_month = calendar?.weeks_rows?.[3]?.[3];
   const init = () => {
     dispatch(loadCalendarPageAction());

@@ -5,6 +5,7 @@ import Typography from '@mui/material/Typography';
 import TextField from '@mui/material/TextField';
 import IconButton from '@mui/material/IconButton';
 import Badge from '@mui/material/Badge';
+import {Grid} from '@mui/material';
 
 export const StyledCalendarInputDateContainer = styled(Box)(({theme}) => {
   return {
@@ -41,7 +42,7 @@ export const StyledCalendarDateContainer = styled(Button)(props => {
   };
 });
 
-export const StyledCalendarWeekRowContainer = styled(Box)(({theme}) => {
+export const StyledCalendarWeekRowContainer = styled(Box)(() => {
   return {
     display: 'flex',
     flexWrap: 'wrap',
@@ -94,10 +95,16 @@ export const StyledCloseIcon = styled(IconButton)(() => {
   };
 });
 
-export const StyledDayRemindNumContainers = styled(Badge)(({theme}) => {
+export const StyledDayRemindNumContainers = styled(Badge)(() => {
   return {
     position: 'absolute',
     right: 15,
     bottom: 15,
+  };
+});
+
+export const StyledCalendarReminderDialogContentContainer = styled(Grid)(() => {
+  return {
+    paddingTop: 10,
   };
 });

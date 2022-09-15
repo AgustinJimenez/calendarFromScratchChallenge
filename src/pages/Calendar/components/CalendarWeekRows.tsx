@@ -34,7 +34,6 @@ const CalendarWeekRows = () => {
             onClick={() => onOpenDialog(date.value)}
             //@ts-ignore
             istoday={String(istoday)}
-            //@ts-ignore
             isweekend={String(['sunday', 'saturday'].includes(date.day))}>
             {date?.['day_number']}
             <StyledDayRemindNumContainers

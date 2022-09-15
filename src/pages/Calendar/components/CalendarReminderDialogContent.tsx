@@ -20,6 +20,7 @@ import Grid from '@mui/material/Grid';
 import IconButton from '@mui/material/IconButton';
 import {datasetSelector} from '../../../redux/selectors';
 import {AppCalendarType, AppReminderType} from '../../../types';
+import {StyledCalendarReminderDialogContentContainer} from '../styles';
 
 let timer: NodeJS.Timeout;
 
@@ -106,7 +107,12 @@ const CalendarReminderDialogContent = () => {
   };
   return (
     <Grid container>
-      <Grid container item direction="row" alignSelf="center" spacing={4}>
+      <StyledCalendarReminderDialogContentContainer
+        container
+        item
+        direction="row"
+        alignSelf="center"
+        spacing={4}>
         <Grid item xs={12}>
           <TextField
             inputRef={reminderTextInputRef}
@@ -206,7 +212,7 @@ const CalendarReminderDialogContent = () => {
             </Button>
           )}
         </Grid>
-      </Grid>
+      </StyledCalendarReminderDialogContentContainer>
       <Grid container alignSelf="center">
         {Boolean(selectedDateReminders?.length) && (
           <TableContainer component={Paper}>

@@ -25,7 +25,7 @@ ReactDOM.render(
       </PersistGate>
     </ReduxProvider>
   </React.StrictMode>,
-  //@ts-ignore
+
   document.getElementById('root'),
 );
 

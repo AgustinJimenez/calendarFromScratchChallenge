@@ -1,10 +1,14 @@
+import {LanguagesDataType, LanguagesTypes} from '../types';
 import data from './data.json';
 
-const listIds = Object.keys(data);
-const getDataLang = (lang: string) => {
-  var dataLang: any = {};
-  //@ts-ignore
-  listIds.map((id: any) => (dataLang[id] = data[id][lang]));
+const listIds = Object.keys(data as LanguagesDataType);
+const getDataLang = (lang: LanguagesTypes) => {
+  var dataLang: {
+    [id: string]: string;
+  } = {};
+  listIds.forEach(
+    (id: string) => (dataLang[id] = (data as LanguagesDataType)[id][lang]),
+  );
   return dataLang;
 };
 
